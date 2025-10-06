@@ -1,15 +1,15 @@
 {
   "name": "servineo-frontend",
   "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack --port $SERVER_PORT",
-    "build": "next build --turbopack",
-    "start": "next start",
-    "lint": "eslint",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
-  },
+"private": true,
+"scripts": {
+  "dev": "next dev --turbopack --port 3001",
+  "build": "next build --turbopack",
+  "start": "next start --port 3001",
+  "lint": "eslint",
+  "format": "prettier --write .",
+  "format:check": "prettier --check ."
+},
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "next": "15.5.4",
