@@ -1,0 +1,150 @@
+[
+    {
+        "destacado": true,
+        "imagen": "/images/tuberias.jpg",
+        "titulo": "Reparacion de tuberias",
+        "descripcion": "Fuga de tuberias en cocina, baño, etc.",
+        "nombreFixer": "Carlos",
+        "apellidoFixer": "Mamani",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "2 horas",
+        "calificacion": 4.8,
+        "precio": {
+            "min":50,
+            "max":80
+        }
+    },
+    {
+        "destacado": false,
+        "imagen": "/images/electricista.jpg",
+        "titulo": "Instalacion electrica",
+        "descripcion": "Instalacion de puntos de luz electricos",
+        "nombreFixer": "Ana",
+        "apellidoFixer": "Quispe",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "5 horas",
+        "calificacion": 4.0,
+        "precio": {
+            "min":120,
+            "max":150
+        }
+    },
+    {
+        "destacado": true,
+        "imagen": "/images/carpintero.jpg",
+        "titulo": "Muebles a medida",
+        "descripcion": "Construccion de estanterias",
+        "nombreFixer": "Miguel",
+        "apellidoFixer": "Condori",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "1 dia",
+        "calificacion": 4.2,
+        "precio": {
+            "min":200,
+            "max":300
+        }
+    },
+    {
+        "destacado": true,
+        "imagen": "/images/carpintero.jpg",
+        "titulo": "Muebles a medida",
+        "descripcion": "Construccion de estanterias",
+        "nombreFixer": "Miguel",
+        "apellidoFixer": "Condori",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "1 dia",
+        "calificacion": 4.8,
+        "precio": {
+            "min":200,
+            "max":300
+        }
+    },{
+        "destacado": true,
+        "imagen": "/images/carpintero.jpg",
+        "titulo": "Muebles a medida",
+        "descripcion": "Construccion de estanterias",
+        "nombreFixer": "Miguel",
+        "apellidoFixer": "Condori",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "1 dia",
+        "calificacion": 4.8,
+        "precio": {
+            "min":200,
+            "max":300
+        }
+    }
+    ,{
+        "destacado": true,
+        "imagen": "/images/carpintero.jpg",
+        "titulo": "Muebles a medida",
+        "descripcion": "Construccion de estanterias",
+        "nombreFixer": "Miguel",
+        "apellidoFixer": "Condori",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "1 dia",
+        "calificacion": 4.5,
+        "precio": {
+            "min":200,
+            "max":300
+        }
+    },{
+        "destacado": true,
+        "imagen": "/images/carpintero.jpg",
+        "titulo": "Muebles a medida",
+        "descripcion": "Construccion de estanterias",
+        "nombreFixer": "Miguel",
+        "apellidoFixer": "Condori",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "1 dia",
+        "calificacion": 3.9,
+        "precio": {
+            "min":200,
+            "max":300
+        }
+    },
+    {
+        "destacado": true,
+        "imagen": "/images/carpintero.jpg",
+        "titulo": "Muebles a medida",
+        "descripcion": "Construccion de estanterias",
+        "nombreFixer": "Miguel",
+        "apellidoFixer": "Condori",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "1 dia",
+        "calificacion": 5.0,
+        "precio": {
+            "min":200,
+            "max":300
+        }
+    },
+    {
+        "destacado": true,
+        "imagen": "/images/carpintero.jpg",
+        "titulo": "Muebles a medida",
+        "descripcion": "Construccion de estanterias",
+        "nombreFixer": "Miguel",
+        "apellidoFixer": "Condori",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "1 dia",
+        "calificacion": 4.9,
+        "precio": {
+            "min":200,
+            "max":300
+        }
+    },
+    {
+        "destacado": true,
+        "imagen": "/images/carpintero.jpg",
+        "titulo": "Muebles a medida",
+        "descripcion": "Construccion de estanterias",
+        "nombreFixer": "Miguel",
+        "apellidoFixer": "Condori",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "1 dia",
+        "calificacion": 4.1,
+        "precio": {
+            "min":200,
+            "max":300
+        }
+    }
+]
