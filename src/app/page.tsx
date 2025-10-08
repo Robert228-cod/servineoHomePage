@@ -1,4 +1,5 @@
 import Carrusel from "./Home/Carrusel";
+import Mapa from "./Home/Mapa/Mapa";
 
 export default function Home() {
   return (
@@ -17,6 +18,16 @@ export default function Home() {
       <main className="w-full">
         <Carrusel />
       </main>
+
+      {/* Mapa Component - Debajo del Carrusel */}
+      <section className="w-full py-8 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+            Encuentra Servicios Cerca de Ti
+          </h2>
+          <Mapa />
+        </div>
+      </section>
 
       {/* The footer from the original template can be added back here if needed */}
     </div>
