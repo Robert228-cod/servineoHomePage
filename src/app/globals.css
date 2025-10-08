@@ -1,4 +1,17 @@
 @import 'tailwindcss';
+
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+  }
+}
+
+
 /*
 :root {
   --background: #ffffff;

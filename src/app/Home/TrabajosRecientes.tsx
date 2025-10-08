@@ -11,7 +11,7 @@ export const TrabajosRecientes = () => {
   return (
     <>
         <div>
-        <h1 className='text-[25px] text-center'> Trabajos recientes </h1>
+        <h1 className='text-[25px] text-center text-2xl font-bold text-gray-900 mb-[20px]'> Trabajos recientes </h1>
 
         {/*
         <div className="flex justify-between pr-8">
@@ -30,11 +30,13 @@ export const TrabajosRecientes = () => {
                 imgPath={item.imagen}
                 titulo={item.titulo} 
                 descripcion={item.descripcion} 
+                categoria={item.categoria}
                 nombre={item.nombreFixer} 
-                apellidio={item.apellidoFixer} 
+                apellido={item.apellidoFixer} 
                 ubicacion={item.ubicacion} 
                 tiempo={item.tiempoPublicado} 
                 calificacion={item.calificacion}
+                telefono={item.telefono}
                 precio={{
                     min: item.precio.min,
                     max: item.precio.max

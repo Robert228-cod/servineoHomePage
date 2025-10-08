@@ -4,11 +4,13 @@
         "imagen": "/images/tuberias.jpg",
         "titulo": "Reparacion de tuberias",
         "descripcion": "Fuga de tuberias en cocina, baño, etc.",
+        "categoria": "plomeria",
         "nombreFixer": "Carlos",
         "apellidoFixer": "Mamani",
         "ubicacion": "cochabamba",
         "tiempoPublicado": "2 horas",
         "calificacion": 4.8,
+        "telefono": 75845845,
         "precio": {
             "min":50,
             "max":80
@@ -19,11 +21,13 @@
         "imagen": "/images/electricista.jpg",
         "titulo": "Instalacion electrica",
         "descripcion": "Instalacion de puntos de luz electricos",
+        "categoria": "electricidad",
         "nombreFixer": "Ana",
         "apellidoFixer": "Quispe",
         "ubicacion": "cochabamba",
         "tiempoPublicado": "5 horas",
         "calificacion": 4.0,
+        "telefono": 75856250,
         "precio": {
             "min":120,
             "max":150
@@ -34,11 +38,13 @@
         "imagen": "/images/carpintero.jpg",
         "titulo": "Muebles a medida",
         "descripcion": "Construccion de estanterias",
+        "categoria": "carpinteria",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.2,
+        "telefono": 68507058,
         "precio": {
             "min":200,
             "max":300
@@ -49,11 +55,13 @@
         "imagen": "/images/carpintero.jpg",
         "titulo": "Muebles a medida",
         "descripcion": "Construccion de estanterias",
+        "categoria": "carpinteria",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.8,
+        "telefono": 70058908,
         "precio": {
             "min":200,
             "max":300
@@ -63,11 +71,13 @@
         "imagen": "/images/carpintero.jpg",
         "titulo": "Muebles a medida",
         "descripcion": "Construccion de estanterias",
+        "categoria": "carpinteria",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.8,
+        "telefono": 70047506,
         "precio": {
             "min":200,
             "max":300
@@ -78,11 +88,13 @@
         "imagen": "/images/carpintero.jpg",
         "titulo": "Muebles a medida",
         "descripcion": "Construccion de estanterias",
+        "categoria": "carpinteria",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.5,
+        "telefono": 78005963,
         "precio": {
             "min":200,
             "max":300
@@ -92,11 +104,13 @@
         "imagen": "/images/carpintero.jpg",
         "titulo": "Muebles a medida",
         "descripcion": "Construccion de estanterias",
+        "categoria": "carpinteria",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 3.9,
+        "telefono": 78058960,
         "precio": {
             "min":200,
             "max":300
@@ -107,11 +121,13 @@
         "imagen": "/images/carpintero.jpg",
         "titulo": "Muebles a medida",
         "descripcion": "Construccion de estanterias",
+        "categoria": "carpinteria",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 5.0,
+        "telefono":75807740,
         "precio": {
             "min":200,
             "max":300
@@ -122,11 +138,13 @@
         "imagen": "/images/carpintero.jpg",
         "titulo": "Muebles a medida",
         "descripcion": "Construccion de estanterias",
+        "categoria": "carpinteria",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.9,
+        "telefono": 77058608,
         "precio": {
             "min":200,
             "max":300
@@ -137,11 +155,13 @@
         "imagen": "/images/carpintero.jpg",
         "titulo": "Muebles a medida",
         "descripcion": "Construccion de estanterias",
+        "categoria": "carpinteria",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.1,
+        "telefono": 78404745,
         "precio": {
             "min":200,
             "max":300

@@ -2,24 +2,28 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { FiPhone } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 
 interface Props {
     destacado: boolean,
     imgPath: string,
     titulo: string,
     descripcion: string,
+    categoria: string,
     nombre: string,
-    apellidio: string,
+    apellido: string,
     ubicacion: string,
     tiempo: string,
     calificacion: number,
+    telefono: number,
     precio: {
         min: number,
         max: number
     }
 }
 
-export const JobCard = ({destacado, imgPath, titulo, descripcion,nombre,apellidio, ubicacion, tiempo, calificacion, precio}:Props) => {
+export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nombre,apellido, ubicacion, tiempo, calificacion, telefono, precio}:Props) => {
     
     const [expandido, setExpandido] = useState(false)
 
@@ -27,31 +31,47 @@ export const JobCard = ({destacado, imgPath, titulo, descripcion,nombre,apellidi
 
   return (
     <div>
-        <div className='flex flex-col justify-around border border-solid border-[black] mr-[5px] mb-[5px] p-3 min-h-[350] max-h-[350] max-w-[260] min-w-[260]'>
-            { <span className={destacado ? `opacity-[100%]` : `opacity-[0%]`}> Destacado </span> } 
+        <div className='flex flex-col rounded-[10px] justify-around border border-solid border-black/15 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/30 mr-[5px] mb-[5px] p-3 min-h-[370] max-h-[370] max-w-[260] min-w-[260]'>
+            <div className='flex flex-row justify-between mb-[5px]'>
+                { 
+                    <span className={destacado ? `opacity-[100%] border border-solid pr-[5px] pl-[5px] text-[gold] rounded-[8px]` : `opacity-[0%]`}> Destacado </span> 
+                } 
+                <span className={`border border-solid border-white/0 bg-[#a7f3a7] text-green-900 rounded-[10px] p-[1px] pr-[5px] pl-[5px] text-[13px] font-semibold `} > {categoria} </span>
+            </div>
 
-            <Image src={imgPath} width={300} height={200} alt='imagen del trabajo' priority={true}/>
+            <Image className='object-cover rounded-lg' src={imgPath} width={300} height={200} alt='imagen del trabajo' priority={true}/>
 
-            <div className='flex justify-between'>
-                <h2> {titulo} </h2>
-                <div>
-                    <span>{tiempo}</span>
-                </div>
+            <div className='flex flex-row justify-between items-center'>
+                <strong className='text-[95%]'> {titulo} </strong>
+                <span className='text-[11px]'>hace {tiempo}</span>
             </div>
             
-            <hr />
+            <hr className='opacity-20'/>
 
             <strong  
                 onClick={() => setExpandido(!expandido)}
-                className={`cursor-pointer transition-all duration-300 ${expandido ? "whitespace-normal overflow-visible" : "truncate whitespace-nowrap overflow-hidden" }`}
+                className={`opacity-80 cursor-pointer transition-all duration-300 ${expandido ? "whitespace-normal overflow-visible" : "truncate whitespace-nowrap overflow-hidden" }`}
                 title="Haz clic para expandir o colapsar"
-            
             > 
                 {descripcion} 
             </strong>
 
-            <div className='flex flex-row justify-between'>
-                <button className='border border-solid border-[black] rounded-[6%] p-1.5'> WhatsApp </button>
+            <div className='flex flex-row gap-[5px]'>
+                <strong className='opacity-70'> Fixer: </strong>
+                <span className='opacity-70'>{nombre}</span>
+                <span className='opacity-70'>{apellido}</span>
+            </div>
+
+            <div className='flex items-center gap-[5px] opacity-70'>
+                <FiPhone />
+                <span> +591 {telefono} </span>
+            </div>
+
+            <div className='flex flex-row justify-between items-center'>
+                <button className='flex flex-row items-center justify-center gap-[3px] bg-[#25D366] hover:bg-[#128C7E] duration-150 text-white h-9 w-40 rounded-[8px]'>
+                    <FaWhatsapp />
+                    WhatsApp 
+                </button>
                 <span>⭐{calificacion}</span>
             </div>
         </div>
