@@ -39,6 +39,27 @@ const slides = [
 const Carrusel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 150) {
+      nextSlide();
+    }
+
+    if (touchStart - touchEnd < -150) {
+      prevSlide();
+    }
+  };
+
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -52,22 +73,49 @@ const Carrusel = () => {
   };
 
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [currentIndex]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 5000); // Change slide every 5 seconds
+    }, 8000); // Change slide every 5 seconds
     return () => clearInterval(interval);
   }, [currentIndex]);
 
   return (
-    <div className={styles.carruselContainer}>
-      <div className={styles.slide} style={{ backgroundImage: `url(${slides[currentIndex].image})` }}>
-        <div className={styles.overlay}></div>
-        <div className={styles.content}>
-          <span className={styles.title}>{slides[currentIndex].title}</span>
-          <h2 className={styles.subtitle}>{slides[currentIndex].subtitle}</h2>
-          <p className={styles.description}>{slides[currentIndex].description}</p>
+    <div 
+      className={styles.carruselContainer}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`${styles.slide} ${index === currentIndex ? styles.active : ''}`}
+          style={{ backgroundImage: `url(${slide.image})` }}
+        >
+          <div className={styles.overlay}></div>
+          <div className={styles.content}>
+            <span className={styles.title}>{slide.title}</span>
+            <h2 className={styles.subtitle}>{slide.subtitle}</h2>
+            <p className={styles.description}>{slide.description}</p>
+          </div>
         </div>
-      </div>
+      ))}
 
       <button onClick={prevSlide} className={`${styles.arrow} ${styles.leftArrow}`}>
         &#10094;

@@ -5,11 +5,11 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-white">
       {/* Placeholder for Header */}
       <div className="w-full p-6 border-b shadow-sm text-center">
-        <p className="font-semibold text-lg">HEADER</p>
+        <p className="font-semibold text-lg text-dark-blue">HEADER</p>
       </div>
 
       {/* Placeholder for Buscador */}
-      <div className="w-full p-6 bg-blue-500 text-center">
+      <div className="w-full p-6 bg-primary text-center">
         <p className="font-semibold text-lg text-white">BUSCADOR</p>
       </div>
 
