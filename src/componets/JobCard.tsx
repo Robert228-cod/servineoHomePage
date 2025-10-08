@@ -30,7 +30,7 @@ export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nom
     const {min, max} = precio
 
   return (
-    <div>
+    <>
         <div className='flex flex-col rounded-[10px] justify-around border border-solid border-black/15 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/30 mr-[5px] mb-[5px] p-3 min-h-[370] max-h-[370] max-w-[260] min-w-[260]'>
             <div className='flex flex-row justify-between mb-[5px]'>
                 { 
@@ -75,6 +75,6 @@ export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nom
                 <span>⭐{calificacion}</span>
             </div>
         </div>
-    </div>
+    </>
   )
 }
