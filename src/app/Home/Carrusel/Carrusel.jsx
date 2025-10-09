@@ -105,9 +105,15 @@ const Carrusel = () => {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`${styles.slide} ${index === currentIndex ? styles.active : ''}`}
-          style={{ backgroundImage: `url(${slide.image})` }}
-        >
+          className={`${styles.slide} ${index === currentIndex ? styles.active : ''}`}>
+          <Image
+            src={slide.image}
+            alt={slide.title}
+            layout="fill"
+            objectFit="cover"
+            className={styles.image}
+            priority={index === 0} // Carga la primera imagen con prioridad
+          />
           <div className={styles.overlay}></div>
           <div className={styles.content}>
             <span className={styles.title}>{slide.title}</span>
