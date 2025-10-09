@@ -1,23 +1,5 @@
 [
     {
-        "destacado": true,
-        "imagen": "/images/tuberias.jpg",
-        "titulo": "Reparacion de tuberias",
-        "descripcion": "Fuga de tuberias en cocina, baño, etc.",
-        "categoria": "plomeria",
-        "nombreFixer": "Carlos",
-        "apellidoFixer": "Mamani",
-        "ubicacion": "cochabamba",
-        "tiempoPublicado": "2 horas",
-        "calificacion": 4.8,
-        "telefono": 75986518,
-        "activo": true,
-        "precio": {
-            "min":50,
-            "max":80
-        }
-    },
-    {
         "destacado": false,
         "imagen": "/images/electricista.jpg",
         "titulo": "Instalacion electrica",
@@ -193,6 +175,24 @@
         "precio": {
             "min":200,
             "max":300
+        }
+    },
+        {
+        "destacado": true,
+        "imagen": "/images/tuberias.jpg",
+        "titulo": "Reparacion de tuberias",
+        "descripcion": "Fuga de tuberias en cocina, baño, etc.",
+        "categoria": "plomeria",
+        "nombreFixer": "Carlos",
+        "apellidoFixer": "Mamani",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "2 horas",
+        "calificacion": 4.8,
+        "telefono": 75986518,
+        "activo": true,
+        "precio": {
+            "min":50,
+            "max":80
         }
     }
 ]
