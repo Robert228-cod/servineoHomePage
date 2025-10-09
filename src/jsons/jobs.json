@@ -10,7 +10,8 @@
         "ubicacion": "cochabamba",
         "tiempoPublicado": "2 horas",
         "calificacion": 4.8,
-        "telefono": 75845845,
+        "telefono": 75986518,
+        "activo": true,
         "precio": {
             "min":50,
             "max":80
@@ -27,7 +28,8 @@
         "ubicacion": "cochabamba",
         "tiempoPublicado": "5 horas",
         "calificacion": 4.0,
-        "telefono": 75856250,
+        "telefono": 75986518,
+        "activo": true,
         "precio": {
             "min":120,
             "max":150
@@ -44,7 +46,8 @@
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.2,
-        "telefono": 68507058,
+        "telefono": 75986518,
+        "activo": true,
         "precio": {
             "min":200,
             "max":300
@@ -61,7 +64,8 @@
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.8,
-        "telefono": 70058908,
+        "telefono": 75986518,
+        "activo": true,
         "precio": {
             "min":200,
             "max":300
@@ -77,7 +81,8 @@
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.8,
-        "telefono": 70047506,
+        "telefono": 75986518,
+        "activo": true,
         "precio": {
             "min":200,
             "max":300
@@ -94,7 +99,8 @@
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.5,
-        "telefono": 78005963,
+        "telefono": 75986518,
+        "activo": true,
         "precio": {
             "min":200,
             "max":300
@@ -110,7 +116,8 @@
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 3.9,
-        "telefono": 78058960,
+        "telefono": 75986518,
+        "activo": true,
         "precio": {
             "min":200,
             "max":300
@@ -127,7 +134,8 @@
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 5.0,
-        "telefono":75807740,
+        "telefono":75986518,
+        "activo": true,
         "precio": {
             "min":200,
             "max":300
@@ -144,7 +152,8 @@
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.9,
-        "telefono": 77058608,
+        "telefono": 75986518,
+        "activo": true,
         "precio": {
             "min":200,
             "max":300
@@ -161,7 +170,26 @@
         "ubicacion": "cochabamba",
         "tiempoPublicado": "1 dia",
         "calificacion": 4.1,
-        "telefono": 78404745,
+        "telefono": 75986518,
+        "activo": true,
+        "precio": {
+            "min":200,
+            "max":300
+        }
+    },
+    {
+        "destacado": true,
+        "imagen": "/images/carpintero.jpg",
+        "titulo": "Muebles a medida",
+        "descripcion": "Construccion de estanterias",
+        "categoria": "carpinteria",
+        "nombreFixer": "Miguel",
+        "apellidoFixer": "Condori",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "1 dia",
+        "calificacion": 4.1,
+        "telefono": 75986518,
+        "activo": true,
         "precio": {
             "min":200,
             "max":300
