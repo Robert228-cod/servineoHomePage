@@ -1,6 +1,19 @@
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
 
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+  }
+}
+
+
+/*
 :root {
   --background: #ffffff;
   --foreground: #1a1a1a; /* Más suave que el azul */
@@ -25,3 +38,4 @@ body {
   color: var(--foreground);
   font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
 }
+*/

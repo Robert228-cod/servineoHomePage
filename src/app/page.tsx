@@ -1,4 +1,5 @@
 import Carrusel from "./Home/Carrusel";
+import { TrabajosRecientes } from './Home/TrabajosRecientes';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       {/* Carrusel Component */}
       <main className="w-full">
         <Carrusel />
+        <TrabajosRecientes />
       </main>
 
       {/* The footer from the original template can be added back here if needed */}
