@@ -4,8 +4,10 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { FiPhone } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { useRouter } from 'next/navigation';
 
-interface Props {
+interface Props {   
+    idJob: number,
     destacado: boolean,
     imgPath: string,
     titulo: string,
@@ -24,9 +26,10 @@ interface Props {
 }
 
 
-export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nombre,apellido, ubicacion, tiempo, calificacion, telefono, precio}:Props) => {
+export const JobCard = ({idJob, destacado, imgPath, titulo, descripcion, categoria, nombre,apellido, ubicacion, tiempo, calificacion, telefono, precio}:Props) => {
     
     const [expandido, setExpandido] = useState(false)
+    const route = useRouter()
 
     const {min, max} = precio
 
@@ -37,11 +40,14 @@ export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nom
 
         window.open(url, "_blank")
     }
-    console.log(tiempo)
+    
+    const redireccion = () => {
+        route.push(`/Home/jobPage?idJob=${idJob}`)
+    }
 
   return (
     <>
-        <div className={`flex flex-col rounded-[10px] justify-around border border-solid border-black/15 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/30 mr-[5px] mb-[5px] p-3 min-h-[370] max-h-[auto] max-w-[auto] min-w-[auto]`}>
+        <div className={`flex flex-col rounded-[10px] justify-around border border-solid border-black/15 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/30 mr-[5px] mb-[5px] p-3 min-h-[370] max-h-[auto] max-w-[260] min-w-[260]`}>
             <div className='flex flex-row justify-between mb-[5px]'>
                 { 
                     <span className={destacado ? `opacity-[100%] border border-solid pr-[5px] pl-[5px] text-[gold] rounded-[8px]` : `opacity-[0%]`}
@@ -58,7 +64,7 @@ export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nom
                 </span>
             </div>
 
-            <Image className='object-cover rounded-lg' src={imgPath} width={300} height={200} alt='imagen del trabajo' priority={true}/>
+            <Image onClick={redireccion} className='object-cover rounded-lg cursor-pointer' src={imgPath} width={300} height={200} alt='imagen del trabajo' priority={true}/>
 
             <div className='flex flex-row justify-between items-center'>
                 <strong className='text-[95%]'> {titulo} </strong>
