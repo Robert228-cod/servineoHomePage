@@ -76,7 +76,7 @@ export const JobCard = ({idJob, destacado, imgPath, titulo, descripcion, categor
             <strong  
                 onClick={() => setExpandido(!expandido)}
                 className={`opacity-80 cursor-pointer transition-all duration-300 ${expandido ? "whitespace-normal overflow-visible" : "truncate whitespace-nowrap overflow-hidden"}`}
-                title="Haz clic para expandir o colapsar"
+                title="Haz clic para expandir"
             > 
                 {descripcion} 
             </strong>
@@ -99,7 +99,7 @@ export const JobCard = ({idJob, destacado, imgPath, titulo, descripcion, categor
 
             <div className='flex flex-row justify-between items-center'>
                 <button 
-                    className='flex flex-row items-center justify-center gap-[3px] bg-[#25D366] hover:bg-[#128C7E] duration-150 text-white h-9 w-40 rounded-[8px]'
+                    className='flex flex-row items-center justify-center gap-[3px] bg-[#25D366] hover:bg-[#1ebe5d] duration-150 text-white h-9 w-40 rounded-[8px]'
                     onClick={handleClick}
                 >
                     <FaWhatsapp />
