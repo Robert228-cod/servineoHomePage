@@ -1,11 +1,15 @@
 'use client';
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Assuming Next.js for useRouter
+import { useRouter, usePathname } from 'next/navigation';
+import Link from 'next/link';
+
+// Assuming Next.js for useRouter
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('');
   const router = useRouter(); // Initialize useRouter
+  const pathname = usePathname(); // Para determinar la sección activa
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
@@ -34,61 +38,63 @@ const Header = () => {
       onKeyDown={handleArrowNavigation}
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo Placeholder */}
-        <div className="text-xl font-bold" style={{ color: 'var(--primary-color)' }}>
-          Servineo
+        <div className="flex items-center">
+          <div className="w-6 flex justify-center">
+            {pathname !== '/' && (
+              <Link
+                href="/"
+                aria-label="Volver al inicio"
+                className="text-2xl transition-colors duration-200 
+                   hover:bg-gray-300 hover:rounded-md p-1"
+              >
+                ←
+              </Link>
+            )}
+          </div>
+
+          <div className="ml-8 text-3xl font-bold" style={{ color: 'var(--primary-color)' }}>
+            Servineo
+          </div>
         </div>
 
         {/* Desktop Menu */}
         <nav className="hidden md:block" aria-label="Main navigation">
           <ul className="flex space-x-4" role="menubar">
             <li>
-              <a
-                href="#services"
+              <Link
+                href="/Servicios"
                 className={`px-2 py-1 border-b-2 border-transparent transition-all duration-200
-                    hover:border-[var(--primary-color)] ${activeLink === 'services' ? 'border-[var(--primary-color)] font-semibold' : ''}`}
+                    hover:border-[var(--primary-color)] ${pathname.startsWith('/Servicios') ? 'border-[var(--primary-color)] font-semibold' : ''}`}
                 style={{ '--primary-color': 'var(--primary-color)' }}
-                onClick={() => handleLinkClick('services')}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') handleLinkClick('services');
-                }}
                 role="menuitem"
                 tabIndex={0}
               >
                 Servicios
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#job-offers"
+              <Link
+                href="/Ofertas"
                 className={`px-2 py-1 border-b-2 border-transparent transition-all duration-200
-                    hover:border-[var(--primary-color)] ${activeLink === 'job-offers' ? 'border-[var(--primary-color)] font-semibold' : ''}`}
+                  hover:border-[var(--primary-color)] ${pathname.startsWith('/Ofertas') ? 'border-[var(--primary-color)] font-semibold' : ''}`}
                 style={{ '--primary-color': 'var(--primary-color)' }}
-                onClick={() => handleLinkClick('job-offers')}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') handleLinkClick('job-offers');
-                }}
                 role="menuitem"
                 tabIndex={0}
               >
                 Ofertas de trabajo
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#help"
+              <Link
+                href="/Help"
                 className={`px-2 py-1 border-b-2 border-transparent transition-all duration-200
-                    hover:border-[var(--primary-color)] ${activeLink === 'help' ? 'border-[var(--primary-color)] font-semibold' : ''}`}
+                  hover:border-[var(--primary-color)] ${pathname.startsWith('/Help') ? 'border-[var(--primary-color)] font-semibold' : ''}`}
                 style={{ '--primary-color': 'var(--primary-color)' }}
-                onClick={() => handleLinkClick('help')}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') handleLinkClick('help');
-                }}
                 role="menuitem"
                 tabIndex={0}
               >
                 Ayuda
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

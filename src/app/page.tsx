@@ -1,10 +1,7 @@
 import Image from 'next/image';
-import Header from './Home/header';
-
 export default function Home() {
   return (
     <div className="font-sans min-h-screen flex flex-col">
-      <Header />
       <main className="flex flex-col flex-grow items-center justify-center p-8 sm:p-20 gap-8">
         {' '}
         <Image
