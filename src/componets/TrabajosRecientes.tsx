@@ -50,9 +50,13 @@ export const TrabajosRecientes = () => {
         jobs.length > 0 && 
           <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 p-4">
             {
-              jobs.slice(initial, visible).map( (item, index) => 
-                (
-                  (item.activo === true && item.categoria === handleOption) ?
+              jobs
+                .slice()
+                .reverse()
+                .filter(item => handleOption === "todo" || item.categoria === handleOption)
+                .slice(initial, visible)
+                .map((item, index) => (
+                  item.activo === true &&
                     <JobCard
                       key={index}
                       idJob={index}
@@ -73,29 +77,7 @@ export const TrabajosRecientes = () => {
                         }
                       } 
                     /> 
-                    : handleOption === "todo" &&
-                    <JobCard
-                      key={index}
-                      idJob={index}
-                      destacado={item.destacado} 
-                      imgPath={item.imagen}
-                      titulo={item.titulo} 
-                      descripcion={item.descripcion} 
-                      categoria={item.categoria}
-                      nombre={item.nombreFixer} 
-                      apellido={item.apellidoFixer} 
-                      ubicacion={item.ubicacion} 
-                      tiempo={item.tiempoPublicado} 
-                      calificacion={item.calificacion}
-                      telefono={item.telefono}
-                      precio={{
-                          min: item.precio.min,
-                          max: item.precio.max
-                        }
-                      } 
-                    /> 
-                )
-              )
+                ))
             } 
           </div>
       }
@@ -111,6 +93,14 @@ export const TrabajosRecientes = () => {
             </button>
         }
         {
+          // el boton de ver mas solo se muestra cuando hay 10 o mas jobs en pantalla
+          jobs
+            .slice()
+            .reverse()
+            .filter(item => handleOption === "todo" || item.categoria === handleOption)
+            .filter(item => item.activo === true)
+            .slice(initial, visible)
+            .length >= 10 &&
           visible < jobs.length &&
             <button 
               className='bg-[#2585d3] hover:bg-[#1834c2] duration-150 text-white h-9 w-40 rounded-[8px]'
