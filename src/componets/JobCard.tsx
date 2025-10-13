@@ -45,6 +45,19 @@ export const JobCard = ({idJob, destacado, imgPath, titulo, descripcion, categor
         route.push(`/Home/jobPage?idJob=${idJob}`)
     }
 
+    const categoriaColors: {[key: string]: string} = {
+        "plomeria": "text-blue-700 bg-blue-100",
+        "electricidad": "text-yellow-700 bg-yellow-100",
+        "carpinteria": "text-amber-800 bg-amber-100",
+        "limpieza": "text-green-700 bg-green-100",
+        "pintura": "text-red-700 bg-red-100",
+        "jardinería": "text-lime-700 bg-lime-100",
+
+        "default": "text-green-900 bg-[#a7f3a7]"
+    }
+
+    const categoriaClass = categoriaColors[categoria] || categoriaColors["default"]
+
   return (
     <>
         <div className={`flex flex-col rounded-[10px] justify-around border border-solid border-black/15 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/30 mr-[5px] mb-[5px] p-3 min-h-[370] max-h-[auto] max-w-[260] min-w-[260]`}>
@@ -58,7 +71,8 @@ export const JobCard = ({idJob, destacado, imgPath, titulo, descripcion, categor
                 {
                     tiempo === "5 horas" && <span className='border border-solid border-#004280 text-[#004280] rounded-[10px] p-[1px] pr-[5px] pl-[5px] text-[13px] font-semibold'> Nuevo </span>
                 }
-                <span className={`border border-solid border-white/0 bg-[#a7f3a7] text-green-900 rounded-[10px] p-[1px] pr-[5px] pl-[5px] text-[13px] font-semibold `} 
+                <span
+                    className={`border border-solid border-white/0 rounded-[10px] p-[1px] pr-[5px] pl-[5px] text-[13px] font-semibold ${categoriaClass} bg-[${categoriaClass}]`}
                 > 
                     {categoria} 
                 </span>

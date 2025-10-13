@@ -59,7 +59,7 @@ export const TrabajosRecientes = () => {
                   item.activo === true &&
                     <JobCard
                       key={index}
-                      idJob={index}
+                      idJob={jobs.indexOf(item)}
                       destacado={item.destacado} 
                       imgPath={item.imagen}
                       titulo={item.titulo} 
@@ -81,9 +81,10 @@ export const TrabajosRecientes = () => {
             } 
           </div>
       }
-
+      
       <div className='flex flex-row justify-center gap-[5px]'>
         {
+          // el boton de ver siguiente solo se muestra si el usuario ya avanzo una pagina
           initial === 10 &&
             <button
               className='bg-[#d39625] hover:bg-[#1834c2] duration-150 text-white h-9 w-40 rounded-[8px]'
