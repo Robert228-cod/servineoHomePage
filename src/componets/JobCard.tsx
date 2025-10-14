@@ -4,8 +4,10 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { FiPhone } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { useRouter } from 'next/navigation';
 
-interface Props {
+interface Props {   
+    idJob: number,
     destacado: boolean,
     imgPath: string,
     titulo: string,
@@ -14,7 +16,7 @@ interface Props {
     nombre: string,
     apellido: string,
     ubicacion: string,
-    tiempo: string,
+    tiempo: any,
     calificacion: number,
     telefono: number,
     precio: {
@@ -24,9 +26,10 @@ interface Props {
 }
 
 
-export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nombre,apellido, ubicacion, tiempo, calificacion, telefono, precio}:Props) => {
+export const JobCard = ({idJob, destacado, imgPath, titulo, descripcion, categoria, nombre,apellido, ubicacion, tiempo, calificacion, telefono, precio}:Props) => {
     
     const [expandido, setExpandido] = useState(false)
+    const route = useRouter()
 
     const {min, max} = precio
 
@@ -37,10 +40,27 @@ export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nom
 
         window.open(url, "_blank")
     }
+    
+    const redireccion = () => {
+        route.push(`/Home/jobPage?idJob=${idJob}`)
+    }
+
+    const categoriaColors: {[key: string]: string} = {
+        "plomeria": "text-blue-700 bg-blue-100",
+        "electricidad": "text-yellow-700 bg-yellow-100",
+        "carpinteria": "text-amber-800 bg-amber-100",
+        "limpieza": "text-green-700 bg-green-100",
+        "pintura": "text-red-700 bg-red-100",
+        "jardinería": "text-lime-700 bg-lime-100",
+
+        "default": "text-green-900 bg-[#a7f3a7]"
+    }
+
+    const categoriaClass = categoriaColors[categoria] || categoriaColors["default"]
 
   return (
     <>
-        <div className={`flex flex-col rounded-[10px] justify-around border border-solid border-black/15 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/30 mr-[5px] mb-[5px] p-3 min-h-[370] max-h-[370] max-w-[260] min-w-[260]`}>
+        <div className={`flex flex-col rounded-[10px] justify-around border border-solid border-black/15 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/30 mr-[5px] mb-[5px] p-3 min-h-[370] max-h-[auto] max-w-[260] min-w-[260]`}>
             <div className='flex flex-row justify-between mb-[5px]'>
                 { 
                     <span className={destacado ? `opacity-[100%] border border-solid pr-[5px] pl-[5px] text-[gold] rounded-[8px]` : `opacity-[0%]`}
@@ -48,10 +68,17 @@ export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nom
                         Destacado 
                     </span> 
                 } 
-                <span className={`border border-solid border-white/0 bg-[#a7f3a7] text-green-900 rounded-[10px] p-[1px] pr-[5px] pl-[5px] text-[13px] font-semibold `} > {categoria} </span>
+                {
+                    tiempo === "5 horas" && <span className='border border-solid border-#004280 text-[#004280] rounded-[10px] p-[1px] pr-[5px] pl-[5px] text-[13px] font-semibold'> Nuevo </span>
+                }
+                <span
+                    className={`border border-solid border-white/0 rounded-[10px] p-[1px] pr-[5px] pl-[5px] text-[13px] font-semibold ${categoriaClass} bg-[${categoriaClass}]`}
+                > 
+                    {categoria} 
+                </span>
             </div>
 
-            <Image className='object-cover rounded-lg' src={imgPath} width={300} height={200} alt='imagen del trabajo' priority={true}/>
+            <Image onClick={redireccion} className='object-cover rounded-lg cursor-pointer' src={imgPath} width={300} height={200} alt='imagen del trabajo' priority={true}/>
 
             <div className='flex flex-row justify-between items-center'>
                 <strong className='text-[95%]'> {titulo} </strong>
@@ -62,8 +89,8 @@ export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nom
 
             <strong  
                 onClick={() => setExpandido(!expandido)}
-                className={`opacity-80 cursor-pointer transition-all duration-300 ${expandido ? "whitespace-normal overflow-visible" : "truncate whitespace-nowrap overflow-hidden" }`}
-                title="Haz clic para expandir o colapsar"
+                className={`opacity-80 cursor-pointer transition-all duration-300 ${expandido ? "whitespace-normal overflow-visible" : "truncate whitespace-nowrap overflow-hidden"}`}
+                title="Haz clic para expandir"
             > 
                 {descripcion} 
             </strong>
@@ -86,7 +113,7 @@ export const JobCard = ({destacado, imgPath, titulo, descripcion, categoria, nom
 
             <div className='flex flex-row justify-between items-center'>
                 <button 
-                    className='flex flex-row items-center justify-center gap-[3px] bg-[#25D366] hover:bg-[#128C7E] duration-150 text-white h-9 w-40 rounded-[8px]'
+                    className='flex flex-row items-center justify-center gap-[3px] bg-[#25D366] hover:bg-[#1ebe5d] duration-150 text-white h-9 w-40 rounded-[8px]'
                     onClick={handleClick}
                 >
                     <FaWhatsapp />

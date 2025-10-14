@@ -1,23 +1,5 @@
 [
     {
-        "destacado": true,
-        "imagen": "/images/tuberias.jpg",
-        "titulo": "Reparacion de tuberias",
-        "descripcion": "Fuga de tuberias en cocina, baño, etc.",
-        "categoria": "plomeria",
-        "nombreFixer": "Carlos",
-        "apellidoFixer": "Mamani",
-        "ubicacion": "cochabamba",
-        "tiempoPublicado": "2 horas",
-        "calificacion": 4.8,
-        "telefono": 75986518,
-        "activo": true,
-        "precio": {
-            "min":50,
-            "max":80
-        }
-    },
-    {
         "destacado": false,
         "imagen": "/images/electricista.jpg",
         "titulo": "Instalacion electrica",
@@ -55,10 +37,10 @@
     },
     {
         "destacado": true,
-        "imagen": "/images/carpintero.jpg",
-        "titulo": "Muebles a medida",
-        "descripcion": "Construccion de estanterias",
-        "categoria": "carpinteria",
+        "imagen": "/images/limpieza.jpg",
+        "titulo": "Limpieza y aseo",
+        "descripcion": "Servicio de limpieza a hogares y lugares diversos",
+        "categoria": "aseo",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
         "ubicacion": "cochabamba",
@@ -67,15 +49,15 @@
         "telefono": 75986518,
         "activo": true,
         "precio": {
-            "min":200,
-            "max":300
+            "min":100,
+            "max":180
         }
     },{
-        "destacado": true,
-        "imagen": "/images/carpintero.jpg",
-        "titulo": "Muebles a medida",
-        "descripcion": "Construccion de estanterias",
-        "categoria": "carpinteria",
+        "destacado": false,
+        "imagen": "/images/pintura.jpg",
+        "titulo": "Pintura para casas",
+        "descripcion": "Servicio de pintura para hogares o cualquier superficie",
+        "categoria": "pintura",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
         "ubicacion": "cochabamba",
@@ -85,14 +67,14 @@
         "activo": true,
         "precio": {
             "min":200,
-            "max":300
+            "max":250
         }
     }
     ,{
         "destacado": true,
-        "imagen": "/images/carpintero.jpg",
+        "imagen": "/images/carpinteria2.jpg",
         "titulo": "Muebles a medida",
-        "descripcion": "Construccion de estanterias",
+        "descripcion": "Construccion de muebles variados",
         "categoria": "carpinteria",
         "nombreFixer": "Miguel",
         "apellidoFixer": "Condori",
@@ -193,6 +175,24 @@
         "precio": {
             "min":200,
             "max":300
+        }
+    },
+        {
+        "destacado": true,
+        "imagen": "/images/tuberias.jpg",
+        "titulo": "Reparacion de tuberias",
+        "descripcion": "Fuga de tuberias en cocina, baño, etc.",
+        "categoria": "plomeria",
+        "nombreFixer": "Carlos",
+        "apellidoFixer": "Mamani",
+        "ubicacion": "cochabamba",
+        "tiempoPublicado": "2 horas",
+        "calificacion": 4.8,
+        "telefono": 75986518,
+        "activo": true,
+        "precio": {
+            "min":50,
+            "max":80
         }
     }
 ]

@@ -13,7 +13,7 @@ export default function Home() {
 
       {/* Placeholder for Buscador */}
       <div className="w-full p-6 bg-primary text-center">
-        <p className="font-semibold text-lg text-white">BUSCADOR</p>
+        <p className="font-semibold text-lg text-black">BUSCADOR</p>
       </div>
 
       {/* Carrusel Component */}
