@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
-import jobs from '@/jsons/jobs.json'
+import jobs from '../jsons/jobs.json'
 import { JobCard } from './JobCard'
-import { JobListEmpty } from '@/componets/JobListEmpty'
+import { JobListEmpty } from './JobListEmpty'
 
 export const TrabajosRecientes = () => {
 
