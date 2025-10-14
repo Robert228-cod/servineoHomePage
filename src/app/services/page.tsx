@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ServiciosPage = () => {
+const ServicesPage = () => {
   const services = [
     {
       id: 1,
@@ -104,4 +104,4 @@ const ServiciosPage = () => {
   );
 };
 
-export default ServiciosPage;
+export default ServicesPage;

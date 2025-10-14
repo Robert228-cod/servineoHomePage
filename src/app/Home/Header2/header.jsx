@@ -1,82 +1,228 @@
-import { useState } from 'react';
+'use client';
+import React, { useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
+import Link from 'next/link';
+
+// Assuming Next.js for useRouter
 
 const Header = () => {
-  const [activeItem, setActiveItem] = useState('inicio');
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
+  const router = useRouter(); // Initialize useRouter
+  const pathname = usePathname(); // Para determinar la sección activa
 
-  const menuItems = [
-    { id: 'inicio', label: 'Inicio', href: '/', icon: '🏠' },
-    { id: 'about', label: 'Acerca de', href: '/about', icon: 'ℹ️' },
-    { id: 'contact', label: 'Contacto', href: '/contact', icon: '📞' },
-    { id: 'services', label: 'Servicios', href: '/services', icon: '⚙️' }
-  ];
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+    setIsOpen(false); // Close mobile menu on link click
+  };
+  const handleArrowNavigation = (e) => {
+    const focusableItems = Array.from(document.querySelectorAll('header a, header button'));
 
-  const getActiveColor = (itemId) => {
-    switch (itemId) {
-      case 'inicio': return 'bg-gradient-to-r from-blue-500 to-purple-600';
-      case 'about': return 'bg-gradient-to-r from-green-500 to-teal-600';
-      case 'contact': return 'bg-gradient-to-r from-pink-500 to-rose-600';
-      case 'services': return 'bg-gradient-to-r from-orange-500 to-red-600';
-      default: return 'bg-gray-100';
+    const currentIndex = focusableItems.indexOf(document.activeElement);
+
+    if (e.key === 'ArrowRight') {
+      const nextIndex = (currentIndex + 1) % focusableItems.length;
+      focusableItems[nextIndex].focus();
+      e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+      const prevIndex = (currentIndex - 1 + focusableItems.length) % focusableItems.length;
+      focusableItems[prevIndex].focus();
+      e.preventDefault();
     }
   };
 
   return (
-    <>
-      {/* Header para desktop */}
-      <header className="hidden md:block bg-white shadow-md">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold text-gray-800">
-            ServiNeo
-          </div>
-          <nav>
-            <ul className="flex space-x-6">
-              {menuItems.map((item) => (
-                <li key={item.id}>
-                  <a 
-                    href={item.href} 
-                    className={`px-4 py-2 rounded-lg transition-all duration-300 ${
-                      activeItem === item.id 
-                        ? `${getActiveColor(item.id)} text-white shadow-lg transform scale-105` 
-                        : 'text-gray-600 hover:text-blue-500 hover:bg-gray-100'
-                    }`}
-                    onClick={() => setActiveItem(item.id)}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </header>
-
-      {/* Header móvil - menú inferior */}
-      <div className="md:hidden">
-        {/* Spacer para el contenido */}
-        <div className="h-16"></div>
-        
-        {/* Menú inferior fijo */}
-        <nav className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-lg z-50">
-          <div className="flex justify-around items-center py-2">
-            {menuItems.map((item) => (
-              <a
-                key={item.id}
-                href={item.href}
-                className={`flex flex-col items-center py-2 px-3 rounded-xl transition-all duration-300 transform ${
-                  activeItem === item.id
-                    ? `${getActiveColor(item.id)} text-white shadow-lg scale-110`
-                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-                }`}
-                onClick={() => setActiveItem(item.id)}
+    <header
+      className="sticky top-0 z-50 shadow-md"
+      style={{ backgroundColor: 'var(--background)', color: 'var(--foreground)' }}
+      onKeyDown={handleArrowNavigation}
+    >
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center">
+          <div className="w-6 flex justify-center">
+            {pathname !== '/' && (
+              <Link
+                href="/"
+                aria-label="Volver al inicio"
+                className="text-2xl transition-colors duration-200 
+                   hover:bg-gray-300 hover:rounded-md p-1"
               >
-                <span className="text-lg mb-1">{item.icon}</span>
-                <span className="text-xs font-medium">{item.label}</span>
-              </a>
-            ))}
+                ←
+              </Link>
+            )}
           </div>
+
+          <div className="ml-8 text-3xl font-bold" style={{ color: 'var(--primary-color)' }}>
+            Servineo
+          </div>
+        </div>
+
+        {/* Desktop Menu */}
+        <nav className="hidden md:block" aria-label="Main navigation">
+          <ul className="flex space-x-4" role="menubar">
+            <li>
+              <Link
+                href="/Servicios"
+                className={`px-2 py-1 border-b-2 border-transparent transition-all duration-200
+                    hover:border-[var(--primary-color)] ${pathname.startsWith('/Servicios') ? 'border-[var(--primary-color)] font-semibold' : ''}`}
+                style={{ '--primary-color': 'var(--primary-color)' }}
+                role="menuitem"
+                tabIndex={0}
+              >
+                Servicios
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Ofertas"
+                className={`px-2 py-1 border-b-2 border-transparent transition-all duration-200
+                  hover:border-[var(--primary-color)] ${pathname.startsWith('/Ofertas') ? 'border-[var(--primary-color)] font-semibold' : ''}`}
+                style={{ '--primary-color': 'var(--primary-color)' }}
+                role="menuitem"
+                tabIndex={0}
+              >
+                Ofertas de trabajo
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Help"
+                className={`px-2 py-1 border-b-2 border-transparent transition-all duration-200
+                  hover:border-[var(--primary-color)] ${pathname.startsWith('/Help') ? 'border-[var(--primary-color)] font-semibold' : ''}`}
+                style={{ '--primary-color': 'var(--primary-color)' }}
+                role="menuitem"
+                tabIndex={0}
+              >
+                Ayuda
+              </Link>
+            </li>
+          </ul>
         </nav>
+
+        {/* Auth Buttons - Desktop */}
+        <div className="hidden md:flex items-center space-x-4">
+          <button
+            className="px-4 py-2 rounded-md border transition-opacity duration-200 hover:opacity-70"
+            style={{
+              borderColor: 'var(--primary-color)',
+              color: 'var(--primary-color)',
+            }}
+          >
+            Iniciar sesión
+          </button>
+
+          <button
+            className="px-4 py-2 rounded-md text-white hover:opacity-80 transition-opacity duration-200"
+            style={{ backgroundColor: 'var(--primary-color)' }}
+            aria-label="Registrarse"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                /* Handle registration action */
+              }
+            }}
+          >
+            Registrarse
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-[var(--foreground)] focus:outline-none"
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') setIsOpen(!isOpen);
+            }}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
-    </>
+
+       {/* Mobile Bottom Menu */}
+       <div className="md:hidden">
+         {/* Spacer para el contenido principal */}
+         <div className="h-20"></div>
+         
+         {/* Menú inferior fijo */}
+         <nav 
+           className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-lg z-50"
+           style={{ backgroundColor: 'var(--background)' }}
+           aria-label="Mobile navigation"
+         >
+           <div className="flex justify-around items-center py-2">
+             <Link
+               href="/Servicios"
+               className={`flex flex-col items-center py-2 px-3 rounded-xl transition-all duration-300 transform ${
+                 pathname.startsWith('/Servicios') 
+                   ? 'bg-gray-600 text-white shadow-lg scale-110' 
+                   : 'text-gray-600 hover:text-white hover:bg-gray-500'
+               }`}
+               onClick={() => handleLinkClick('services')}
+             >
+               <span className="text-lg mb-1">⚙️</span>
+               <span className="text-xs font-medium">Servicios</span>
+             </Link>
+             
+             <Link
+               href="/Ofertas"
+               className={`flex flex-col items-center py-2 px-3 rounded-xl transition-all duration-300 transform ${
+                 pathname.startsWith('/Ofertas') 
+                   ? 'bg-gray-600 text-white shadow-lg scale-110' 
+                   : 'text-gray-600 hover:text-white hover:bg-gray-500'
+               }`}
+               onClick={() => handleLinkClick('job-offers')}
+             >
+               <span className="text-lg mb-1">💼</span>
+               <span className="text-xs font-medium">Trabajos</span>
+             </Link>
+             
+             <Link
+               href="/Help"
+               className={`flex flex-col items-center py-2 px-3 rounded-xl transition-all duration-300 transform ${
+                 pathname.startsWith('/Help') 
+                   ? 'bg-gray-600 text-white shadow-lg scale-110' 
+                   : 'text-gray-600 hover:text-white hover:bg-gray-500'
+               }`}
+               onClick={() => handleLinkClick('help')}
+             >
+               <span className="text-lg mb-1">❓</span>
+               <span className="text-xs font-medium">Ayuda</span>
+             </Link>
+             
+             <button
+               className={`flex flex-col items-center py-2 px-3 rounded-xl transition-all duration-300 transform ${
+                 activeLink === 'login'
+                   ? 'bg-gray-600 text-white shadow-lg scale-110' 
+                   : 'text-gray-600 hover:text-white hover:bg-gray-500'
+               }`}
+               onClick={() => handleLinkClick('login')}
+               aria-label="Iniciar sesión"
+             >
+               <span className="text-lg mb-1">👤</span>
+               <span className="text-xs font-medium">Login</span>
+             </button>
+           </div>
+         </nav>
+       </div>
+    </header>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OfertasPage = () => {
+const JobsPage = () => {
   const jobOffers = [
     {
       id: 1,
@@ -53,6 +53,32 @@ const OfertasPage = () => {
       requirements: ["AWS/Azure", "Docker/Kubernetes", "CI/CD", "Terraform"],
       posted: "Hace 5 días",
       icon: "🚀"
+    },
+    {
+      id: 5,
+      title: "Mobile Developer React Native",
+      company: "ServiNeo Tech",
+      location: "Remoto",
+      salary: "$3200 - $5500",
+      type: "Tiempo Completo",
+      experience: "2-4 años",
+      description: "Desarrollador móvil para crear apps cross-platform",
+      requirements: ["React Native", "JavaScript", "iOS/Android", "Redux"],
+      posted: "Hace 1 día",
+      icon: "📱"
+    },
+    {
+      id: 6,
+      title: "Data Analyst",
+      company: "ServiNeo Tech",
+      location: "Ciudad de México",
+      salary: "$2800 - $4500",
+      type: "Tiempo Completo",
+      experience: "1-3 años",
+      description: "Analista de datos para extraer insights valiosos",
+      requirements: ["Python/SQL", "Power BI/Tableau", "Excel Avanzado", "Estadística"],
+      posted: "Hace 4 días",
+      icon: "📊"
     }
   ];
 
@@ -164,4 +190,4 @@ const OfertasPage = () => {
   );
 };
 
-export default OfertasPage;
+export default JobsPage;
