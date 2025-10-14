@@ -1,5 +1,6 @@
 import Carrusel from "./Home/Carrusel";
 import { TrabajosRecientes } from './Home/TrabajosRecientes';
+import Footer from './Home/Footer/Footer';
 
 export default function Home() {
   return (
@@ -19,8 +20,10 @@ export default function Home() {
         <Carrusel />
         <TrabajosRecientes />
       </main>
-
-      {/* The footer from the original template can be added back here if needed */}
+      
+      {/* Footer Component */}
+      <Footer />
     </div>
   );
 }
+
