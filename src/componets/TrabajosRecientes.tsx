@@ -28,11 +28,11 @@ export const TrabajosRecientes = () => {
 
   return (
     <>
-      <h1 className='text-[25px] text-center text-2xl font-bold text-gray-900 mb-[20px]'> Trabajos recientes </h1>
+      <h1 className='text-[25px] text-center text-2xl font-bold text-gray-900 mb-[20px] mt-[10px]'> Trabajos recientes </h1>
       
       <div className='flex flex-row ml-[10px] '>
         <span className='text-[20px] font-bold text-gray-900 mb-[20px] mr-[5px]'> Buscar por categoria: </span>
-        <select className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-700 focus:border-blue-600 block h-[40px] w-[100px] p-2.5 dark:bg-blue-500 dark:border-blue-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' value={handleOption} onChange={handleSelect} id="categorias">
+        <select className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-[20px] focus:ring-blue-700 focus:border-blue-600 block h-[40px] w-[100px] p-2.5 dark:bg-blue-500 dark:border-blue-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' value={handleOption} onChange={handleSelect} id="categorias">
           {
             categorias.map( (item, index) => 
               <option value={item} key={index}>{item}</option>
@@ -110,7 +110,6 @@ export const TrabajosRecientes = () => {
               Ver mas 
             </button> 
         }
-
       </div>
     </>
   )

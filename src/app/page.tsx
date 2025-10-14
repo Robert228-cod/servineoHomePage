@@ -1,3 +1,4 @@
+import { TrabajosRecientes } from "@/componets/TrabajosRecientes";
 import Carrusel from "./Home/Carrusel";
 
 export default function Home() {
@@ -10,13 +11,18 @@ export default function Home() {
 
       {/* Placeholder for Buscador */}
       <div className="w-full p-6 bg-primary text-center">
-        <p className="font-semibold text-lg text-white">BUSCADOR</p>
+        <p className="font-semibold text-lg text-black">BUSCADOR</p>
       </div>
 
       {/* Carrusel Component */}
       <main className="w-full">
         <Carrusel />
       </main>
+
+      {/* Trabajos recientes */}
+      <div>
+        <TrabajosRecientes />
+      </div>
 
       {/* The footer from the original template can be added back here if needed */}
     </div>

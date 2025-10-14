@@ -1,6 +1,9 @@
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
 
+@import 'tailwindcss';
+
+/*
 @layer base {
   :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
 
@@ -13,15 +16,16 @@
 }
 
 
-/*
+
 :root {
   --background: #ffffff;
-  --foreground: #1a1a1a; /* Más suave que el azul */
-  --accent: #2B31E0; /* Para elementos destacados */
-  --muted: #6b7280; /* Para texto secundario */
+  --foreground: #1a1a1a; 
+  --accent: #2B31E0; 
+  --muted: #6b7280; 
   --border: #e5e7eb;
   --radius: 0.5rem;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
