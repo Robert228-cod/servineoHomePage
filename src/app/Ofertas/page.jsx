@@ -1,74 +1,79 @@
 import React from 'react';
 
 const OfertasPage = () => {
-  const jobOffers = [
+  const serviceOffers = [
     {
       id: 1,
-      title: "Desarrollador Frontend React",
-      company: "ServiNeo Tech",
-      location: "Remoto",
-      salary: "$3000 - $5000",
-      type: "Tiempo Completo",
-      experience: "2-3 años",
-      description: "Buscamos un desarrollador frontend con experiencia en React, TypeScript y Next.js",
-      requirements: ["React/Next.js", "TypeScript", "Tailwind CSS", "Git"],
-      posted: "Hace 2 días",
-      icon: "⚛️"
+      title: 'Electricista Profesional',
+      company: 'ServiHogar',
+      location: 'Ciudad de La Paz',
+      price: '$50 - $80 por hora',
+      type: 'Presencial',
+      experience: '3-5 años',
+      description:
+        'Electricista certificado para instalaciones y reparaciones en domicilios y oficinas.',
+      requirements: [
+        'Certificación eléctrica',
+        'Experiencia en instalaciones residenciales',
+        'Herramientas propias',
+      ],
+      posted: 'Hace 1 día',
+      icon: '⚡',
     },
     {
       id: 2,
-      title: "Backend Developer Node.js",
-      company: "ServiNeo Tech",
-      location: "Ciudad de México",
-      salary: "$3500 - $6000",
-      type: "Tiempo Completo",
-      experience: "3-5 años",
-      description: "Desarrollador backend para crear APIs robustas y escalables",
-      requirements: ["Node.js", "Express", "MongoDB/PostgreSQL", "Docker"],
-      posted: "Hace 1 semana",
-      icon: "🔧"
+      title: 'Plomero Experto',
+      company: 'ServiHogar',
+      location: 'Ciudad de La Paz',
+      price: '$40 - $70 por hora',
+      type: 'Presencial',
+      experience: '2-4 años',
+      description: 'Servicio de plomería para reparaciones, fugas y mantenimiento general.',
+      requirements: ['Experiencia comprobable', 'Herramientas propias', 'Atención a emergencias'],
+      posted: 'Hace 2 días',
+      icon: '🚰',
     },
     {
       id: 3,
-      title: "UI/UX Designer",
-      company: "ServiNeo Tech",
-      location: "Híbrido",
-      salary: "$2500 - $4000",
-      type: "Tiempo Completo",
-      experience: "2-4 años",
-      description: "Diseñador creativo para crear interfaces intuitivas y atractivas",
-      requirements: ["Figma", "Adobe Creative Suite", "Principios UX", "Prototipado"],
-      posted: "Hace 3 días",
-      icon: "🎨"
+      title: 'Pintor Profesional',
+      company: 'ServiHogar',
+      location: 'Remoto / A domicilio',
+      price: '$30 - $60 por hora',
+      type: 'Presencial',
+      experience: '1-3 años',
+      description: 'Pintura de interiores y exteriores, acabados profesionales y decoración.',
+      requirements: ['Experiencia en pintura', 'Acabados precisos', 'Herramientas propias'],
+      posted: 'Hace 3 días',
+      icon: '🎨',
     },
     {
       id: 4,
-      title: "DevOps Engineer",
-      company: "ServiNeo Tech",
-      location: "Remoto",
-      salary: "$4000 - $7000",
-      type: "Tiempo Completo",
-      experience: "4-6 años",
-      description: "Ingeniero DevOps para automatizar procesos de despliegue",
-      requirements: ["AWS/Azure", "Docker/Kubernetes", "CI/CD", "Terraform"],
-      posted: "Hace 5 días",
-      icon: "🚀"
-    }
+      title: 'Albañil Certificado',
+      company: 'ServiHogar',
+      location: 'Ciudad de La Paz',
+      price: '$45 - $75 por hora',
+      type: 'Presencial',
+      experience: '4-6 años',
+      description: 'Trabajos de construcción, remodelación y reparaciones en estructuras.',
+      requirements: ['Experiencia en obra', 'Conocimiento de materiales', 'Trabajo seguro'],
+      posted: 'Hace 5 días',
+      icon: '🏗️',
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Spacer */}
       <div className="h-20"></div>
-      
+
       <div className="container mx-auto px-4 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
-            Ofertas de Trabajo
+            Servicios Disponibles
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Únete a nuestro equipo y forma parte de proyectos innovadores
+            Encuentra profesionales para electricidad, plomería, pintura y albañilería
           </p>
         </div>
 
@@ -78,59 +83,68 @@ const OfertasPage = () => {
             Todos
           </button>
           <button className="bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
-            Remoto
+            Electricista
           </button>
           <button className="bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
-            Presencial
+            Plomería
           </button>
           <button className="bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
-            Híbrido
+            Pintura
+          </button>
+          <button className="bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
+            Albañilería
           </button>
         </div>
 
-        {/* Jobs Grid */}
+        {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto">
-          {jobOffers.map((job) => (
-            <div key={job.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+          {serviceOffers.map((service) => (
+            <div
+              key={service.id}
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6"
+            >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
-                  <span className="text-3xl mr-3">{job.icon}</span>
+                  <span className="text-3xl mr-3">{service.icon}</span>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-800">{job.title}</h3>
-                    <p className="text-gray-600">{job.company}</p>
+                    <h3 className="text-xl font-bold text-gray-800">{service.title}</h3>
+                    <p className="text-gray-600">{service.company}</p>
                   </div>
                 </div>
                 <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
-                  {job.posted}
+                  {service.posted}
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
                 <div className="flex items-center text-gray-600">
                   <span className="mr-2">📍</span>
-                  {job.location}
+                  {service.location}
                 </div>
                 <div className="flex items-center text-gray-600">
                   <span className="mr-2">💰</span>
-                  {job.salary}
+                  {service.price}
                 </div>
                 <div className="flex items-center text-gray-600">
                   <span className="mr-2">⏰</span>
-                  {job.type}
+                  {service.type}
                 </div>
                 <div className="flex items-center text-gray-600">
-                  <span className="mr-2">👨‍💼</span>
-                  {job.experience}
+                  <span className="mr-2">👷‍♂️</span>
+                  {service.experience}
                 </div>
               </div>
 
-              <p className="text-gray-600 mb-4">{job.description}</p>
+              <p className="text-gray-600 mb-4">{service.description}</p>
 
               <div className="mb-4">
                 <h4 className="font-semibold text-gray-800 mb-2">Requisitos:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {job.requirements.map((req, index) => (
-                    <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                  {service.requirements.map((req, index) => (
+                    <span
+                      key={index}
+                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                    >
                       {req}
                     </span>
                   ))}
@@ -138,7 +152,7 @@ const OfertasPage = () => {
               </div>
 
               <button className="w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-700 transition-colors duration-300 font-semibold">
-                Aplicar Ahora
+                Solicitar Servicio
               </button>
             </div>
           ))}
@@ -147,17 +161,17 @@ const OfertasPage = () => {
         {/* CTA Section */}
         <div className="text-center mt-16 bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            ¿No encuentras el puesto ideal?
+            ¿No encuentras el servicio que necesitas?
           </h2>
           <p className="text-gray-600 mb-6">
-            Envíanos tu CV y te contactaremos cuando tengamos una oportunidad que coincida con tu perfil
+            Envíanos tu solicitud y te contactaremos con el profesional adecuado
           </p>
           <button className="bg-gray-600 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors duration-300 font-semibold">
-            Enviar CV
+            Enviar Solicitud
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Bottom Spacer */}
       <div className="h-20 md:hidden"></div>
     </div>
