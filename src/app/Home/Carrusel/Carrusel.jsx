@@ -5,31 +5,31 @@ import styles from "./Carrusel.module.css";
 
 const slides = [
   {
-    "image": "/Carpinteria.png",
+    "image": "/Carpinteria.webp",
     "title": "Carpintería",
     "subtitle": "Trabajos en madera de calidad",
     "description": "Carpintería y muebles a medida"
   },
   {
-    "image": "/Electricistas.png",
+    "image": "/Electricistas.webp",
     "title": "Electricistas",
     "subtitle": "Soluciones eléctricas seguras",
     "description": "Instalaciones y reparaciones eléctricas"
   },
   {
-    "image": "/Limpieza.png",
+    "image": "/Limpieza.webp",
     "title": "Limpieza",
     "subtitle": "Espacios impecables, vida saludable",
     "description": "Servicios de limpieza para hogares y oficinas"
   },
   {
-    "image": "/Pintura.png",
+    "image": "/Pintura.webp",
     "title": "Pintura",
     "subtitle": "Renueva tus espacios con color",
     "description": "Pintura de interiores y exteriores"
   },
   {
-    "image": "/Plomeria.png",
+    "image": "/Plomeria.webp",
     "title": "Plomería",
     "subtitle": "Soluciones expertas para tus tuberías",
     "description": "Reparación e instalación de plomería"
