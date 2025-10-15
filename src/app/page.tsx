@@ -2,16 +2,12 @@ import Carrusel from "./Home/Carrusel/Carrusel";
 import { TrabajosRecientes } from '../componets/TrabajosRecientes';
 import Footer from './Home/Footer/Footer';
 import Mapa from "./Home/Mapa/Mapa";
-import { Header } from "../componets/header";
 
 import Buscador from './Home/Buscador/Buscador';
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Header Component */}
-      <Header />
-
       {/* Buscador Component */}
       <div className="w-full p-6 bg-primary text-center">
         <Buscador />
