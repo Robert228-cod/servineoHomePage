@@ -28,11 +28,16 @@ export const TrabajosRecientes = () => {
 
   return (
     <>
-      <h1 className='text-[25px] text-center text-2xl font-bold text-gray-900 mb-[20px] mt-[10px]'> Trabajos recientes </h1>
+      <h1 className='text-3xl md:text-4xl text-center font-bold text-gray-900 mb-8'> Trabajos recientes </h1>
       
-      <div className='flex flex-row ml-[10px] '>
-        <span className='text-[20px] font-bold text-gray-900 mb-[20px] mr-[5px]'> Buscar por categoria: </span>
-        <select className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-[20px] focus:ring-blue-700 focus:border-blue-600 block h-[40px] w-[100px] p-2.5 dark:bg-blue-500 dark:border-blue-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' value={handleOption} onChange={handleSelect} id="categorias">
+      <div className='flex flex-col md:flex-row items-center justify-center md:justify-start mb-8 px-4'>
+        <span className='text-lg font-semibold text-gray-900 mb-4 md:mb-0 md:mr-4'> Buscar por categoria: </span>
+        <select 
+          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-700 focus:border-blue-600 block h-[40px] w-[150px] p-2.5' 
+          value={handleOption} 
+          onChange={handleSelect} 
+          id="categorias"
+        >
           {
             categorias.map( (item, index) => 
               <option value={item} key={index}>{item}</option>
@@ -48,7 +53,7 @@ export const TrabajosRecientes = () => {
 
       {
         jobs.length > 0 && 
-          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 p-4">
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 px-4">
             {
               jobs
                 .slice()
@@ -82,12 +87,12 @@ export const TrabajosRecientes = () => {
           </div>
       }
       
-      <div className='flex flex-row justify-center gap-[5px]'>
+      <div className='flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 px-4'>
         {
           // el boton de ver siguiente solo se muestra si el usuario ya avanzo una pagina
-          initial === 10 &&
+          initial >= 10 &&
             <button
-              className='bg-[#d39625] hover:bg-[#1834c2] duration-150 text-white h-9 w-40 rounded-[8px]'
+              className='bg-orange-500 hover:bg-orange-600 duration-150 text-white px-6 py-3 rounded-lg font-semibold transition-colors'
               onClick={updateListPrevius}
             >
               Ver anteriores
@@ -104,10 +109,10 @@ export const TrabajosRecientes = () => {
             .length >= 10 &&
           visible < jobs.length &&
             <button 
-              className='bg-[#2585d3] hover:bg-[#1834c2] duration-150 text-white h-9 w-40 rounded-[8px]'
+              className='bg-blue-600 hover:bg-blue-700 duration-150 text-white px-6 py-3 rounded-lg font-semibold transition-colors'
               onClick={updateList}
             > 
-              Ver mas 
+              Ver más 
             </button> 
         }
       </div>

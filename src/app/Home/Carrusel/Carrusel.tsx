@@ -1,52 +1,65 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, TouchEvent } from "react";
 import Image from "next/image";
 import styles from "./Carrusel.module.css";
 
-const slides = [
+interface Slide {
+  image: string;
+  category: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+const slides: Slide[] = [
   {
     "image": "/Carpinteria.webp",
-    "title": "Carpintería",
-    "subtitle": "Trabajos en madera de calidad",
-    "description": "Carpintería y muebles a medida"
+    "category": "Carpintería",
+    "title": "Trabajos en madera de calidad",
+    "subtitle": "Carpintería y muebles a medida",
+    "description": "Profesionales especializados en trabajos de carpintería y muebles personalizados"
   },
   {
     "image": "/Electricistas.webp",
-    "title": "Electricistas",
-    "subtitle": "Soluciones eléctricas seguras",
-    "description": "Instalaciones y reparaciones eléctricas"
+    "category": "Electricidad",
+    "title": "Soluciones eléctricas seguras",
+    "subtitle": "Instalaciones y reparaciones eléctricas",
+    "description": "Expertos en instalaciones eléctricas residenciales e industriales"
   },
   {
     "image": "/Limpieza.webp",
-    "title": "Limpieza",
-    "subtitle": "Espacios impecables, vida saludable",
-    "description": "Servicios de limpieza para hogares y oficinas"
+    "category": "Limpieza",
+    "title": "Espacios impecables, vida saludable",
+    "subtitle": "Servicios de limpieza profesional",
+    "description": "Limpieza completa para hogares y oficinas con productos eco-amigables"
   },
   {
     "image": "/Pintura.webp",
-    "title": "Pintura",
-    "subtitle": "Renueva tus espacios con color",
-    "description": "Pintura de interiores y exteriores"
+    "category": "Pintura",
+    "title": "Renueva tus espacios con color",
+    "subtitle": "Pintura de interiores y exteriores",
+    "description": "Transforma tu hogar con colores que reflejan tu personalidad"
   },
   {
     "image": "/Plomeria.webp",
-    "title": "Plomería",
-    "subtitle": "Soluciones expertas para tus tuberías",
-    "description": "Reparación e instalación de plomería"
+    "category": "Plomería",
+    "title": "Soluciones expertas para tus tuberías",
+    "subtitle": "Reparación e instalación de plomería",
+    "description": "Soluciones rápidas y efectivas para todos tus problemas de plomería"
   }
 ];
 
 const Carrusel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  const [touchStart, setTouchStart] = useState<number>(0);
+  const [touchEnd, setTouchEnd] = useState<number>(0);
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
@@ -73,7 +86,7 @@ const Carrusel = () => {
   };
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
         prevSlide();
       } else if (e.key === 'ArrowRight') {
@@ -116,9 +129,9 @@ const Carrusel = () => {
           />
           <div className={styles.overlay}></div>
           <div className={styles.content}>
-            <span className={styles.title}>{slide.title}</span>
-            <h2 className={styles.subtitle}>{slide.subtitle}</h2>
-            <p className={styles.description}>{slide.description}</p>
+            <span className={styles.category}>{slide.category}</span>
+            <h2 className={styles.title}>{slide.title}</h2>
+            <p className={styles.subtitle}>{slide.subtitle}</p>
           </div>
         </div>
       ))}
