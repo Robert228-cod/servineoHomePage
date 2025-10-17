@@ -10,5 +10,9 @@ interface NoResultsProps {
 export default function NoResults({ show, position }: NoResultsProps) {
   if (!show) return null;
 
-  return <Popup position={position}>⚠️ Sin resultados</Popup>;
+  return (
+    <Popup position={position} autoPan closeButton={false}>
+      ⚠️ No se encontraron fixers cercanos
+    </Popup>
+  );
 }
