@@ -13,20 +13,21 @@ export default function LocationButton({ onClick }: LocationButtonProps) {
         px-4 py-2
         bg-white
         rounded-full
-        shadow-md
+        shadow-lg
         border border-gray-200
         text-blue-600
-        font-semibold
-        transition-all
+        font-medium
+        transition
         duration-300
+        transform
+        hover:shadow-2xl
         hover:bg-blue-50
-        hover:shadow-xl
         hover:scale-105
         active:scale-95
       "
       title="Centrar en mi ubicación"
     >
-      {/* 📍 Icono de ubicación */}
+      {/* Icono */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5"
@@ -47,7 +48,8 @@ export default function LocationButton({ onClick }: LocationButtonProps) {
         />
       </svg>
 
-      <span>Tu ubicación</span>
+      {/* Texto */}
+      Tu ubicación
     </button>
   );
 }
