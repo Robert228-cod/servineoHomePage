@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.css';
 import Header from './Home/Header/header';
-import BottomNav from './components/BottomNav';
+import BottomNav from './Home/BottomNav/BottomNav';
 
 const roboto = Roboto({
   variable: '--font-roboto',
@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${roboto.variable} antialiased`}>
         <Header />
-        <main>{children}</main>
+        <main className="pb-20 lg:pb-0">{children}</main>
         <BottomNav />
       </body>
     </html>
