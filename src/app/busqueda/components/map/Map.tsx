@@ -6,8 +6,8 @@ import { Fixer } from "@/app/busqueda/interface/Fixer_Interface";
 import { LatLngExpression } from "leaflet";
 
 import RecenterMap from "./RecenterMap";
-import UserMarker from "./UserMarker";
-import FixerMarker from "./FixerMarker";
+import UserMarker from "./UserMaker"  ;
+import FixerMarker from "./FixerMaker";
 import MapEvents from "./MapEvents";
 import MapCircle from "./MapCircle";
 import LocationButton from "./LocationButton";
