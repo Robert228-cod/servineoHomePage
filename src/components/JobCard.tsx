@@ -4,7 +4,6 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { FiPhone } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
-import { useRouter } from 'next/navigation';
 
 interface Props {   
     idJob: number,
@@ -16,7 +15,7 @@ interface Props {
     nombre: string,
     apellido: string,
     ubicacion: string,
-    tiempo: any,
+    tiempo: string | number, // cambiado para evitar `any`
     calificacion: number,
     telefono: number,
     precio: {
@@ -29,7 +28,6 @@ interface Props {
 export const JobCard = ({idJob, destacado, imgPath, titulo, descripcion, categoria, nombre,apellido, ubicacion, tiempo, calificacion, telefono, precio}:Props) => {
     
     const [expandido, setExpandido] = useState(false)
-    const route = useRouter()
 
     const {min, max} = precio
 
@@ -60,7 +58,7 @@ export const JobCard = ({idJob, destacado, imgPath, titulo, descripcion, categor
 
   return (
     <>
-        <div className={`flex flex-col rounded-[10px] justify-around border border-solid border-black/15 shadow-md transition-shadow duration-300 hover:shadow-lg hover:shadow-black/30 mr-[5px] mb-[5px] p-3 min-h-[370] max-h-[auto] max-w-[260] min-w-[260]`}>
+        <div className={`flex flex-col rounded-[10px] justify-around border border-solid border-black/15 shadow-md transition-shadow duration-300 hover:shadow-lg hover:shadow-black/30 mr-[5px] mb-[5px] p-3 min-h-[370px] max-w-[260px] min-w-[260px]`}>
             <div className='flex flex-row justify-between mb-[5px]'>
                 { 
                     <span className={destacado ? `opacity-[100%] border border-solid pr-[5px] pl-[5px] text-[#5E2BE0] rounded-[8px]` : `opacity-[0%]`}

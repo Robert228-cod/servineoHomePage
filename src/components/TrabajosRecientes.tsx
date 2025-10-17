@@ -24,7 +24,7 @@ export const TrabajosRecientes = () => {
       setInitial(prev => Math.max(0, prev - 8))
       setVisible(prev => Math.max(8, prev - 8))
     }
-    const handleSelect = (e:any) => {
+    const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
       setHandleOption(e.target.value)
     }
 
