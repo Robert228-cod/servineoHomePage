@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.css';
+import 'leaflet/dist/leaflet.css';
 import Header from './Home/Header/header';
 import BottomNav from './Home/BottomNav/BottomNav';
 
