@@ -10,7 +10,7 @@ export default function RecenterMap({ position }: RecenterMapProps) {
   const map = useMap();
 
   useEffect(() => {
-    map.setView(position); // mueve el mapa directamente
+    map.flyTo(position, map.getZoom(), { animate: true, duration: 0.8 });
   }, [position, map]);
 
   return null;
