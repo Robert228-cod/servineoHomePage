@@ -1,3 +1,4 @@
+
 'use client'
 
 import { useSearchParams } from 'next/navigation'
@@ -14,7 +15,7 @@ export default function jobPage() {
   const job = jobs[idJob]
 
   return (
-    <div className='p-[10px]'>
+    <div className='p-[20px] pt-[30px]'>
       <h1 className='text-[25px] text-2xl font-bold text-gray-900 mb-[20px]'> {job.titulo} </h1>
 
       <div className='flex gap-[9px]'>
