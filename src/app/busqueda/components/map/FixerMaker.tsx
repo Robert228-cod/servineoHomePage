@@ -4,7 +4,7 @@ import { Marker, Popup, Tooltip } from "react-leaflet";
 import L from "leaflet";
 import { Fixer } from "@/app/busqueda/interface/Fixer_Interface";
 
-interface FixerMarkerProps {
+interface FixerMarkerProps { 
   fixer: Fixer;
 }
 
