@@ -10,7 +10,7 @@ import { TrabajosRecientes } from '../components/TrabajosRecientes';
 import Footer from './Home/Footer/Footer';
 import Buscador from './Home/Buscador/Buscador';
 import ServiciosPage from "./servicios/servicios";
-
+// Importa otros componentes según sea necesario
 // Dynamic import para Leaflet Map (evita errores SSR)
 const Map = dynamic(() => import("@/app/busqueda/components/map/Map"), { ssr: false });
 
